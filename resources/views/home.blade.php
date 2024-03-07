@@ -26,7 +26,7 @@ $total_pelanggan           = App\Models\User::where('id','<>','1')->count();
                            <h4 class="text-capitalize breadcrumb-title">Dashboard</h4>
                         </div>
                      </div>
-                     <div class="col-xxl-6">
+                     <div class="col-xxl">
                         <div class="row">
                            <div class="col-xxl-6 col-sm-6 mb-25">
                               <div class="ap-po-details ap-po-details--2 p-25 radius-xl d-flex justify-content-between">
