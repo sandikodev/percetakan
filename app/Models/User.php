@@ -3,7 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -13,6 +16,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
+    // protected $keyType = 'string';
+    // public $incrementing = false;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,15 +27,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'nomor_whatsapp',
         'password',
-        'bank_nama',
-        'bank_norek',
-        'bank_atas_nama',
-        'komisi',
-        'id_afiliasi',
-        'is_active',
-        'id_telegram'
     ];
 
     /**
@@ -48,7 +46,13 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        // 'id' => 'string',
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function detail(): HasOne
+    {
+        return $this->hasOne(UserDetail::class);
+    }
 }

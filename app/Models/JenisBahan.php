@@ -17,6 +17,5 @@ class JenisBahan extends Model
         'harga_cm2',
         'keterangan',
         'stok',
-    
     ];
 }

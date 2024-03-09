@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\email_setting;
+// use App\Models\email_setting;
 use App\Models\Midtrans_setting;
 use Illuminate\Support\ServiceProvider;
 use Carbon\Carbon;
@@ -26,26 +26,26 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        config(['app.locale' => 'id']);
-        Carbon::setLocale('id');
+        // config(['app.locale' => 'id']);
+        // Carbon::setLocale('id');
 
      
-            $mailsetting = email_setting::first();
-            if($mailsetting){
-                $data = [
-                    'driver'            => $mailsetting->mail_transport,
-                    'host'              => $mailsetting->mail_host,
-                    'port'              => $mailsetting->mail_port,
-                    'encryption'        => $mailsetting->mail_encryption,
-                    'username'          => $mailsetting->mail_username,
-                    'password'          => $mailsetting->mail_password,
-                    'from'              => [
-                        'address'=>$mailsetting->mail_from,
-                        'name'   => config('app.name'),
-                    ]
-                ];
-                FacadesConfig::set('mail',$data);
-            }
+        //     $mailsetting = email_setting::first();
+        //     if($mailsetting){
+        //         $data = [
+        //             'driver'            => $mailsetting->mail_transport,
+        //             'host'              => $mailsetting->mail_host,
+        //             'port'              => $mailsetting->mail_port,
+        //             'encryption'        => $mailsetting->mail_encryption,
+        //             'username'          => $mailsetting->mail_username,
+        //             'password'          => $mailsetting->mail_password,
+        //             'from'              => [
+        //                 'address'=>$mailsetting->mail_from,
+        //                 'name'   => config('app.name'),
+        //             ]
+        //         ];
+        //         FacadesConfig::set('mail',$data);
+        //     }
 
     }
 }

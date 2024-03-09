@@ -41,7 +41,7 @@ class CustomerController extends Controller
 
     public function produk_dashboard()
     {
-        $produk = Product::where('status_produk','=','PUBLISH')->orderby('id','Desc')->get();
+        $produk = Product::where('status','=','PUBLISH')->orderby('id','Desc')->get();
         return view('member.produk.index',compact('produk'));
     }
 

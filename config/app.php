@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Andes2912\IndoBank\IndoBankServiceProvider::class,
     ])->toArray(),
 
     /*

@@ -11,18 +11,18 @@ class Product extends Model
     public $table = "products";
 
     protected $fillable = [
-        'nama_produk', 
-        'kategori_produk',
-        'deskripsi',
-        'harga_normal',
-        'status_produk',
-        'photo',
-        'kode_produk',
+        'name',
+        'group',
+        'description',
+        'price',
+        'status',
+        'sku',
+        'share', // commission
         'slug',
-        'komisi_persen',
+        'preview_url',
     ];
 
-    public function sluggable():array
+    public function sluggable(): array
     {
         return [
             'slug' => [

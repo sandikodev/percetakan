@@ -57,7 +57,7 @@ $(function(){
   $("#select5").select2();
 });
 </script>
-<x-notify::notify />
+{{-- <x-notify::notify /> --}}
 @notifyJs
 </body>
 </html>
